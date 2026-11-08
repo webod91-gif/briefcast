@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRIEFCAST &#8212; IB시장 주요뉴스 2026.10.01</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g:#00A85A;--g2:#00C06B;--dark:#1A2238;--navy:#1E2D4E;
+  --bg:#F2F4F7;--card:#fff;--bdr:#E4E8EE;
+  --t1:#191F28;--t2:#4E5968;--t3:#8B95A1;--lnk:#1A73E8;
+  --up:#E03030;--dn:#1A73E8;
+  --r:16px;--rm:10px;--max:600px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t1);font-family:'Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}
+#nl{max-width:var(--max);margin:0 auto;background:var(--bg)}
+
+/* HEADER */
+.nl-head{background:linear-gradient(135deg,var(--dark) 0%,var(--navy) 55%,#0b3d22 100%);padding:22px 18px 18px;position:relative;overflow:hidden}
+.nl-head::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(0,192,107,.22) 0%,transparent 70%)}
+.hrow{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;position:relative;z-index:1}
+.logo{font-size:20px;font-weight:900;color:#fff;letter-spacing:.3px}
+.logo span{color:var(--g2)}
+.hdate{font-size:10px;color:rgba(255,255,255,.5);text-align:right;line-height:1.7;font-family:'DM Mono',monospace}
+.ntb{position:relative;z-index:1}
+.ned{font-size:9px;color:var(--g2);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px}
+.nti{font-size:20px;font-weight:900;color:#fff;line-height:1.25;letter-spacing:-.3px;margin-bottom:10px}
+.chips{display:flex;gap:5px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:2px 8px;font-size:9px;color:rgba(255,255,255,.6);font-weight:500}
+.chip.g{background:rgba(0,192,107,.18);border-color:rgba(0,192,107,.3);color:var(--g2)}
+
+/* SECTION TITLE */
+.stl{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:1.5px;margin:14px 14px 8px;display:flex;align-items:center;gap:8px}
+.stl::after{content:'';flex:1;height:1px;background:var(--bdr)}
+
+/* ── MARKET ── */
+.mkt-w{padding:0 14px;display:flex;flex-direction:column;gap:10px}
+.mgl{font-size:10px;font-weight:700;color:var(--t2);margin-bottom:5px;display:flex;align-items:center;gap:5px}
+.mgl::before{content:'';width:3px;height:11px;background:var(--g);border-radius:2px}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.mw{grid-column:1/-1}
+.mc{background:var(--card);border-radius:var(--rm);padding:12px 13px;border:1px solid var(--bdr);position:relative;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+.mc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--rm) var(--rm) 0 0}
+.mc.up::before{background:var(--up)}
+.mc.dn::before{background:var(--dn)}
+.mc.flat::before{background:var(--t3)}
+.mcl{font-size:9px;font-weight:600;color:var(--t3);letter-spacing:.5px;margin-bottom:5px}
+.mcv{font-size:19px;font-weight:800;letter-spacing:-.5px;line-height:1;margin-bottom:5px}
+.mc.up .mcv{color:var(--up)}
+.mc.dn .mcv{color:var(--dn)}
+.mc.flat .mcv{color:var(--t2)}
+.mcr{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.mca{font-size:11px;font-weight:700}
+.mc.up .mca{color:var(--up)} .mc.dn .mca{color:var(--dn)} .mc.flat .mca{color:var(--t3)}
+.mcp{font-size:10px;font-weight:700}
+.mc.up .mcp{color:var(--up)} .mc.dn .mcp{color:var(--dn)} .mc.flat .mcp{color:var(--t3)}
+.mcpct{font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px}
+.mc.up .mcpct{color:var(--up);background:rgba(224,48,48,.08)}
+.mc.dn .mcpct{color:var(--dn);background:rgba(26,115,232,.08)}
+.mc.flat .mcpct{color:var(--t3);background:var(--bg)}
+.mkt-src{font-size:8px;color:var(--t3);text-align:right;padding:5px 14px 0}
+
+/* ── NEWS ── */
+.ns{margin:0 14px 6px}
+.nsh{background:var(--card);border-radius:var(--r) var(--r) 0 0;padding:11px 14px 9px;border:1px solid var(--bdr);border-bottom:none;display:flex;align-items:center;justify-content:space-between}
+.nsk{font-size:14px;font-weight:800;color:var(--t1);letter-spacing:-.3px;display:flex;align-items:center;gap:7px}
+.nsk::before{content:'';width:3px;height:14px;background:var(--g);border-radius:3px;flex-shrink:0}
+.nsc{font-size:10px;color:var(--t3);font-weight:500;background:var(--bg);border-radius:20px;padding:2px 7px}
+.sb{background:var(--card);border:1px solid var(--bdr);border-top:none;overflow:hidden;border-radius:0 0 var(--r) var(--r);margin-bottom:10px}
+.art{display:flex;padding:12px 14px;border-bottom:1px solid var(--bdr);gap:10px;text-decoration:none;color:inherit;align-items:flex-start;transition:background .12s}
+.art:last-child{border-bottom:none}
+.art:active,.art:hover{background:#f5faf7}
+.an{font-size:11px;font-weight:800;color:var(--g);flex-shrink:0;width:18px;padding-top:1px;font-family:'DM Mono',monospace}
+.ac{flex:1;min-width:0}
+.ah{font-size:14px;font-weight:700;line-height:1.5;color:var(--t1);margin-bottom:4px;letter-spacing:-.1px}
+.am{display:flex;align-items:center;gap:6px;margin-bottom:3px;flex-wrap:wrap}
+.asrc{font-size:9px;font-weight:700;color:var(--g);background:rgba(0,168,90,.08);padding:1px 6px;border-radius:3px}
+.atm{font-size:9px;color:var(--t3);font-family:'DM Mono',monospace}
+.au{font-size:9px;color:var(--lnk);font-family:'DM Mono',monospace;text-decoration:none;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aa{flex-shrink:0;color:var(--bdr);font-size:13px;align-self:center}
+
+/* FOOTER */
+.nft{background:var(--card);margin:14px;border-radius:var(--r);padding:14px;border:1px solid var(--bdr);display:flex;align-items:center;gap:10px}
+.ffi{width:32px;height:32px;background:linear-gradient(135deg,var(--g),var(--g2));border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.fft{flex:1}
+.ffn{font-size:11px;font-weight:800;color:var(--t1);margin-bottom:1px}
+.ffn span{color:var(--g)}
+.ffs{font-size:9px;color:var(--t3);line-height:1.5}
+.ffd{font-size:9px;color:var(--t3);text-align:right;line-height:1.6;font-family:'DM Mono',monospace;flex-shrink:0;white-space:pre}
+.tbn{background:#EAF7F0;border:1px solid #B7E4CC;border-radius:var(--rm);margin:14px;padding:11px 13px;display:flex;align-items:center;gap:8px}
+.tbn .i{font-size:15px;flex-shrink:0}
+.tbn .t{font-size:12px;font-weight:700;color:#0B6B3A;line-height:1.45}
+.pad{height:20px}
+</style>
+</head>
+<body>
+<div id="nl">
+
+<div class="nl-head">
+  <div class="hrow">
+    <div class="logo">BRIEF<span>CAST</span></div>
+    <div class="hdate">2026.10.01 Thursday<br>24h 이내 기사</div>
+  </div>
+  <div class="ntb">
+    <div class="ned">IB시장 Edition · Vol.2026-10-01</div>
+    <div class="nti">IB시장 주요뉴스</div>
+    <div class="chips"><span class="chip g">IB 투자</span><span class="chip g">M&amp;A</span><span class="chip g">생산적금융</span><span class="chip g">지분투자</span><span class="chip g">기업금융</span><span class="chip g">금리</span><span class="chip g">주식</span><span class="chip g">채권</span><span class="chip g">부동산</span><span class="chip g">글로벌 경제</span><span class="chip g">하나은행</span><span class="chip g">하나금융</span></div>
+  </div>
+</div>
+
+
+<div class="stl">전일 종가 · 전전일 대비 등락</div>
+<div class="mkt-w">
+
+  <div>
+    <div class="mgl">뉴욕 증시</div>
+    <div class="mg">
+      <div class="mc dn">
+        <div class="mcl">Dow Jones</div>
+        <div class="mcv">50,906.05</div>
+        
+        <div class="mcr">
+          <span class="mca">▼</span>
+          <span class="mcp">-443.87</span>
+          <span class="mcpct">-0.86%</span>
+        </div>
+      </div>
+      <div class="mc dn">
+        <div class="mcl">S&amp;P 500</div>
+        <div class="mcv">7,651.54</div>
+        
+        <div class="mcr">
+          <span class="mca">▼</span>
+          <span class="mcp">-19.30</span>
+          <span class="mcpct">-0.25%</span>
+        </div>
+      </div>
+      <div class="mc up mw">
+        <div class="mcl">Nasdaq</div>
+        <div class="mcv">26,861.06</div>
+        
+        <div class="mcr">
+          <span class="mca">▲</span>
+          <span class="mcp">+63.53</span>
+          <span class="mcpct">+0.24%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="mgl">유럽·아시아</div>
+    <div class="mg">
+      <div class="mc dn">
+        <div class="mcl">FTSE 100</div>
+        <div class="mcv">10,606.00</div>
+        
+        <div class="mcr">
+          <span class="mca">▼</span>
+          <span class="mcp">-30.70</span>
+          <span class="mcpct">-0.29%</span>
+        </div>
+      </div>
+      <div class="mc up">
+        <div class="mcl">DAX</div>
+        <div class="mcv">25,399.21</div>
+        
+        <div class="mcr">
+          <span class="mca">▲</span>
+          <span class="mcp">+24.79</span>
+          <span class="mcpct">+0.10%</span>
+        </div>
+      </div>
+      <div class="mc dn">
+        <div class="mcl">Nikkei 225</div>
+        <div class="mcv">65,481.27</div>
+        
+        <div class="mcr">
+          <span class="mca">▼</span>
+          <span class="mcp">-396.35</span>
+          <span class="mcpct">-0.60%</span>
+        </div>
+      </div>
+      <div class="mc dn">
+        <div class="mcl">Hang Seng</div>
+        <div class="mcv">24,523.57</div>
+        
+        <div class="mcr">
+          <span class="mca">▼</span>
+          <span class="mcp">-118.94</span>
+          <span class="mcpct">-0.48%</span>
+        </div>
+      </div>
+      <div class="mc up">
+        <div class="mcl">Shanghai Comp.</div>
+        <div class="mcv">3,830.45</div>
+        
+        <div class="mcr">
+          <span class="mca">▲</span>
+          <span class="mcp">+6.83</span>
+          <span class="mcpct">+0.18%</span>
+        </div>
+      </div>
+      <div class="mc dn mw">
+        <div class="mcl">코스피</div>
+        <div class="mcv">6,870.81</div>
+        
+        <div class="mcr">
+          <span class="mca">▼</span>
+          <span class="mcp">-18.93</span>
+          <span class="mcpct">-0.27%</span>
+        </div>
+      </div>
+      <div class="mc up mw">
+        <div class="mcl">코스닥</div>
+        <div class="mcv">849.80</div>
+        
+        <div class="mcr">
+          <span class="mca">▲</span>
+          <span class="mcp">+3.22</span>
+          <span class="mcpct">+0.38%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="mgl">환율</div>
+    <div class="mg">
+      <div class="mc dn mw">
+        <div class="mcl">USD/KRW</div>
+        <div class="mcv">1,356.49</div>
+        
+        <div class="mcr">
+          <span class="mca">▼</span>
+          <span class="mcp">-3.07</span>
+          <span class="mcpct">-0.23%</span>
+        </div>
+      </div>
+      <div class="mc dn">
+        <div class="mcl">JPY/KRW</div>
+        <div class="mcv">8.5960</div>
+        
+        <div class="mcr">
+          <span class="mca">▼</span>
+          <span class="mcp">-0.04</span>
+          <span class="mcpct">-0.45%</span>
+        </div>
+      </div>
+      <div class="mc up">
+        <div class="mcl">USD/JPY</div>
+        <div class="mcv">157.40</div>
+        
+        <div class="mcr">
+          <span class="mca">▲</span>
+          <span class="mcp">+0.04</span>
+          <span class="mcpct">+0.03%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mkt-src">출처: Google Finance &nbsp;|&nbsp; 전전일 종가 대비 &nbsp;|&nbsp; 상승<span style="color:var(--up)">■</span> 하락<span style="color:var(--dn)">■</span></div>
+
+
+<div class="stl" style="margin-top:14px">뉴스
+  <span style="font-size:9px;color:var(--t3);font-weight:400;text-transform:none;letter-spacing:0">
+    &#8212; 총 45건 · 기사 없는 키워드 미표시
+  </span>
+</div>
+
+
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">M&amp;A</div>
+    <div class="nsc">5건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE9INjRNZE1waVYtMG11ZjUwRFk0dll1cGJKbjFhQm04YWFnNDRVX1VrYzY3c0ctTWF3U3drbWFiUTlEYVh2SkwyT1BDTEg5NFR5ZW8xUC1tRXlKdnNHMHNUNtIBeEFVX3lxTE1mUXFnMU9ZMjgxNTRzaUt6eUxUcWhiOFNUVmFVNDhwUGhzVjFFVFA1c1NFTzUwUE95UmR5d2JaVnlDSV81Z1RaZkVEbGViY1JfSGVVN1A5T0ZRS2ZRU3l5OTRUb3hKd0ZoZHFVV0dma0lCc1hDVllOOQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">한미, 美원전 8기 건설…웨스팅 지분 최대 10% 인수 추진</div>
+        <div class="am"><span class="asrc">뉴시스</span><span class="atm">2026.10.01 06:05</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiYEFVX3lxTE9...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE8yQ3ppY2R3SjIzOXBqak5MX2pIYmpLODBKZ0pjWjR0UWptNEl4MEtHTGp2S3VaNk5NZ3J1ZDc3VkI4d2g5RTVrWnZhXzQxdzBBTEpEeGE2UjlMcU1yUUl1d3RUMm9GdWtt?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">02</div>
+      <div class="ac">
+        <div class="ah">[일동그룹 굴기] 일동제약, 아이디언스 지분 인수…'R&amp;D 리스트럭처링' 가속도</div>
+        <div class="am"><span class="asrc">녹색경제신문</span><span class="atm">2026.10.01 06:00</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiaEFVX3lxTE8...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNOW0xUWFiejlWYjZxLWMwMzJBbFhsc0tIOFJBd3R3eGQyUEZMeFprSFVTNWJwcEx0Nk1tMU9nT1VULVJtWUZVMnJleXNMSmZfT2Y4b2VaOFdaamtVX2hzYjQxWXVqUFh4SGREQ2xkM3M5cWV0Z3FjVWoxcUU0Ty1hS3FWQQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">03</div>
+      <div class="ac">
+        <div class="ah">“돈 더 줘야 팝니다”…흔들리는 PEF ‘공개매수→상폐’ 공식</div>
+        <div class="am"><span class="asrc">인베스트조선</span><span class="atm">2026.10.01 07:00</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMigwFBVV95cUx...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE85SjA0d09FNzdodEd6bjlFOS0xUHFadXo0cFVoVUFNSVQ0bzhFMXBMU2R4cjZOaF90UEtuV0xQR2ZXOGU0T1NfSHFGSWdaYWlZOVVzYkdJMVpIRW1h?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">04</div>
+      <div class="ac">
+        <div class="ah">이선호, CJ 신사업·M&amp;A 전면으로…'후계자' 아닌 투자 성적 시험대</div>
+        <div class="am"><span class="asrc">뉴스핌</span><span class="atm">2026.10.01 06:00</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiXEFVX3lxTE8...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE9QTTJ4dXZTdjFZZk56bTEtQjhvRnlfX1dCWEsxZFM2YWVaa2JsRnptUkU2eDZuUTNLRjJLdTluRWtJei1HYVQxRlhUOGxHaVo5RlI1YUQ3c3kzdlNLZGJTZTB6YmN3cnV30gFuQVVfeXFMTVgzQ2pMQktIVHlhcGsxRGNMZWJLN3JPUVkwamFrRTFVaWxXVmVZZWxvaUxYT0psVVFBYmlJUzRqSjBBWGRGNFlvM3A2ZWUtX0x0OGRiNklMOVRxU3dFNHdLcGpmQWpRcEhYYjFETWc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">05</div>
+      <div class="ac">
+        <div class="ah">파라마운트, 워너 품는다…美 법원 1100억달러 인수 승인 - 머니투데이</div>
+        <div class="am"><span class="asrc">머니투데이</span><span class="atm">2026.10.01 04:48</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiaEFVX3lxTE9...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">생산적금융</div>
+    <div class="nsc">5건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE01dXItSW1uT1phVG5OVzE2THRWY0hfcUp3WlFfZk5oeTZubDFqRlMybkhLTG1SMmVtWmNRbGczTHBRUmJGQ0p4a2htWXlDaEUya1F5SG1tZ2xzOWkwY3E40gFkQVVfeXFMT2lqcW1XTzlxUjNoZGZhODNYWVJwTDJsRUJjMlFqY0xrc0xsbjRLYjR4VDR3UkhrN09Ga0NNdDVSdnQ1Zk9qQVJZSmRTMEUtcHBGczNCYUZ2ajJPUEcybnU0dGo4Sw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">1차는 '완판' 2차는 '딴판'…'수익률 부진' 국민성장펀드 시험대</div>
+        <div class="am"><span class="asrc">뉴스1</span><span class="atm">2026.10.01 06:54</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiX0FVX3lxTE0...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTFBPTzRjbFZsSHoxOXlpNU9sWEhzVVg1NUdhN2tYSC1UcmJPbGt6NGdFd3ZMbkFYcGxycGRHenBzUk9CNVZ1VGFEODZzTm53TGw2RjVwanFR?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">02</div>
+      <div class="ac">
+        <div class="ah">2차 국민참여형 국민성장펀드, 첫날 2000억원 판매</div>
+        <div class="am"><span class="asrc">중앙일보</span><span class="atm">2026.09.30 21:02</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiVkFVX3lxTFB...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiZEFVX3lxTFBmc1l6c1hvR2pSdFVOQjlHbWlSM0xwSG5iZUxCUWNkTkc1d01MYlpUeG5ucmVJcDhqV0dtUGFuMExSX3FvVXlsem5OelVhUnc4dEMzdDRMVkd6X2lIM3p6c2dRUmI?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">03</div>
+      <div class="ac">
+        <div class="ah">[기획] ‘생산적 금융 팩트북’ 벼락치기 보험사…카드사는 ‘총량 족쇄’ 풀린 중금리 사활</div>
+        <div class="am"><span class="asrc">매일일보</span><span class="atm">2026.09.30 21:20</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiZEFVX3lxTFB...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMia0FVX3lxTFB6eDE2LUQ0VlJhTjhJOG1oZkpLaDUtb1NsdHNqRlJMaGVkdjdFMlpuWmsxb2t3b3VWSmIxblRqWjlmWmhNaTZHaGlmQllNV2pYNmt0UGl3Ui1pcm1sRm1MMEtiSm1FVzdKbVVJ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">04</div>
+      <div class="ac">
+        <div class="ah">정진완 우리은행장 연임 힘 받나…임종룡 2기 첫 인사 시험대 [인물 포커스]</div>
+        <div class="am"><span class="asrc">뉴스저널리즘</span><span class="atm">2026.09.30 11:40</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMia0FVX3lxTFB...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMibEFVX3lxTE1xTUJvSENNVWF2WHhReGxIOXhxRDNWSE1qa2JWbWRjbmt0dmpBZGxSdHdSVVZnYmFZYVlFUzR4TFRReFhfRmxIMk95Z3QtTDE2LWN4bTlCSGhmZEZKZW5XMGxxVS1fM0wyX3JCSg?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">05</div>
+      <div class="ac">
+        <div class="ah">4대 금융, 17조 순익에도 웃지 못한다···실적 잔치 뒤 주주환원 '딜레마'</div>
+        <div class="am"><span class="asrc">스마트비즈</span><span class="atm">2026.09.30 11:07</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMibEFVX3lxTE1...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">지분투자</div>
+    <div class="nsc">5건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://news.google.com/rss/articles/CBMiT0FVX3lxTFAyN2xTRGlwaUhOS2lnYjZVZnkySXBVZER2am9HcHJmUFk2U3pJOC1tYWdUOFhsUHV6QVJvU3BWRmg0VTA5X3JSdGdCRS10RWc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">&quot;AI 붐 둔화하면 글로벌 금융시장 휘청&quot; 세계 3대 사모펀드 KKR 경고</div>
+        <div class="am"><span class="asrc">v.daum.net</span><span class="atm">2026.10.01 06:04</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiT0FVX3lxTFA...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE85YlhyM19MWDR3UGZXT3QwVFUyZWNrbDlqeWx2MXI5V051bko5dE9IRFhlUHNDa0dGQ3FjMjc1WkxwYWcwczE1bXlMaWFEWF9s?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">02</div>
+      <div class="ac">
+        <div class="ah">美 SEC, 메이어글로벌·CEO 기소…스페이스X 연계 사모펀드 투자자 사기 혐의</div>
+        <div class="am"><span class="asrc">블루밍비트</span><span class="atm">2026.10.01 05:31</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiUEFVX3lxTE8...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://www.thebell.co.kr/front/newsview.asp?code=00&amp;key=202609301030313120101517" target="_blank" rel="noopener">
+      <div class="an">03</div>
+      <div class="ac">
+        <div class="ah">[의무공개매수 운용사 반발] PEF에 유리한 조건?…제도 실효성에 의문 제기</div>
+        <div class="am"><span class="asrc">더벨</span><span class="atm">2026.09.30 16:23</span></div>
+        <span class="au">https://www.thebell.co.kr/front/newsview.asp?code=00...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPQlQ3bEpCMi16Q3dWNm1sMmNiLTlha0R5MXZONGZZekh1VlVxSHV6TmxZVU1WZnllRFRtQnd4RUxxNzI0S1ExV1pwSXIwS2JxVFYwOW9Td1UxUHAxZUw5TXVHbWZodVd6eE9selQtYjRwdWMzSWtZTjFNVWhyaFBLQ1lubFdjQ3lPMlNUNnhfaw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">04</div>
+      <div class="ac">
+        <div class="ah">KVIC LP성장펀드 2차…해외진출 투자 GP에 300억 : 네이버 블로그</div>
+        <div class="am"><span class="asrc">Naver Blog</span><span class="atm">2026.09.30 20:10</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMijwFBVV95cUx...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA1ZFU4SnJ5X0xKbWZfZklZeW1sNUpKUl91cFUyX25UbWIyQnN1b0htYTRmWG5GWkdmTG41aXNPdDJHZVpGbk9kTElEWFJfd29vNXNhY3ZEclh1dEM1ZVBaWmFuR2NNbGc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">05</div>
+      <div class="ac">
+        <div class="ah">[단독]경주 사모펀드 3개 매립장 악영향 속출... “안강 두류 매립장 미래도 의문”</div>
+        <div class="am"><span class="asrc">ynenews.kr</span><span class="atm">2026.09.30 18:54</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">기업금융</div>
+    <div class="nsc">4건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://www.thebell.co.kr/front/newsview.asp?code=00&amp;key=202609301413491920108370" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">[글로벌 파이낸스 2026] 국민은행 하노이, 대출 넘어 거래로 기업금융 다변화</div>
+        <div class="am"><span class="asrc">더벨</span><span class="atm">2026.10.01 07:10</span></div>
+        <span class="au">https://www.thebell.co.kr/front/newsview.asp?code=00...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE9yM05wZWZsRVBQXzh0RGZpeUR5WWEtRGVrVGkyX3ZDMEJDRVZHMl9LMHlNZTNVS0NsbXFEaE54M2ZZN1VjNTBKc2p1ZXZxTHV0b3c?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">02</div>
+      <div class="ac">
+        <div class="ah">한화證, 9000억원 자본확충 …&quot;종투사로 도약&quot;</div>
+        <div class="am"><span class="asrc">매일경제 마켓</span><span class="atm">2026.09.30 19:30</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiUkFVX3lxTE9...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE9mR2RDNng3TU53SFRBZm1YX205elVRc210TzhSaVNOY3pqNXU4MkNNYUcyZjBtbUMycmVoTnU1ZWtnN0w3TDVKdmUzZFJnUEZHV1JERnRCNTBmVVNlOWg4LdIBeEFVX3lxTFB0aUpxd1NCUEpDMXVWT1Z1R0tIWFV0QmhKbWJaMmJCVU1DNXZsOWxHX09uQWkzMHdIS0JmdnY4ZlZkOGJsUHh5SExPZVdnbkVoZG1saFBnejNPbVQ4ekFWUU9ENnljY29nelF0eWxPM1Z6a0FmWWRUNA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">03</div>
+      <div class="ac">
+        <div class="ah">한화생명, 캐피탈 인수·증권 5000억 증자…종합금융 시너지(종합)</div>
+        <div class="am"><span class="asrc">뉴시스</span><span class="atm">2026.09.30 19:15</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiYEFVX3lxTE9...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE5DVXhqZ1I3MVNmS1NCZEpncllWSE5nZmhEQml2NGVyb1BLWWJ2UUhmV2cxQUVmRzlaY19acjZRRFJ1OG0tb2xOU1NCOHBpanEzSk1EMjR6Y0VWcDZVRU4zQW9MZnc2LTdD0gFuQVVfeXFMT3d3OTdwcmh4R0xEb3RpcDlET3ZBM1d4dDBORl9UWWpIQXBzWjhHbHd1V2FKY0JTYlM1TmpEQk9kVi15Ums3eTZKbFNUVFVPUTdsVlB5cEJUQXZBUDdDaVl3eXM2a0dGVHFnaDg5bVE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">04</div>
+      <div class="ac">
+        <div class="ah">하나증권, 블루포인트파트너스와 '혁신기업 지원' 맞손 - 머니투데이</div>
+        <div class="am"><span class="asrc">머니투데이</span><span class="atm">2026.09.30 17:36</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiaEFVX3lxTE5...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">금리</div>
+    <div class="nsc">3건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5IdVlvdi15Tm82ZUNrRWQ4anJpdlZra2x3cGlPZ2c2aEFJMUtyYkNiVi11eXI4c1RjS091Rkt4LUtwOHhjT0hoOEtGMEQyWl9tZVl3M3MxZy1nVTlnaldsSUptZ0tkbmdWWUpyWDlBazlXdWMxaFHSAWZBVV95cUxOcFFnRy15UU5uQVFETjVwc2hlWUs1OU9uQnJZYWF5ZEZVeW9tblpMdkZZTTBTSHVJb1dEWUdZa1RoTURRTFAyYnVjYXk4MlBSQ0YtbWNwOHU5MXBTOGNLSmZZWVBJZ3c?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">주담대 금리 3년 9개월만에 최고치… “7~8%대까지 오를 수도”</div>
+        <div class="am"><span class="asrc">동아일보</span><span class="atm">2026.10.01 00:30</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMidkFVX3lxTE5...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMilwJBVV95cUxPTndzRmxqWExnc0NQVS1XUGktRzhNVjBUZlg0SnZmQXBpRUJ1aFRuUmNoLS1QMm03dEpFdU9INmFOWnhQRkt1YWEzaWQ1ai1VNDVoNjZQUlVOcHZWb2NTTmREbm1IaFhyeW9jYkJCOTUtOWtITFd6cnBZZ3hYOVZQTGpPVjRaZGt0THVhQTZpQ1ZobUZYSlBHRFp6NUhqczVfejlWZWxfNzlZNVFuYnZCTTQ2bkw0Z2tRblc5U0EtMmRWejRBZnczT3UteTEzRWdZS1pxSWdkVmc2eHhuV2FNUW5rYjVvVWpVOUlLdkx5THcweXpuekpSOW44VUQ2YXF6QTNld0c2SkJRM2ZfYU5ad25XMTNmZ0k?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">02</div>
+      <div class="ac">
+        <div class="ah">美국채금리 5%대 고공행진…한은 금리인상 가능성 '촉각'</div>
+        <div class="am"><span class="asrc">dailian.co.kr</span><span class="atm">2026.09.30 18:04</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMilwJBVV95cUx...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMic0FVX3lxTE56M2tBc1Q5X19aWm0xN0lPLTZDX1VFTTJzOWFYODZIOF9mbnNKUktvNzlyS3FRQzJFOXJQbVd0SXkzemYxTzQwaXhGYWpFSHpYMDN0cUxHMk1sNEt5WWp4eXo5NVZualphdGRKNTFfV0tLTUU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">03</div>
+      <div class="ac">
+        <div class="ah">&quot;8월에도 기준금리 올렸는데&quot;…예·적금 금리는 왜 떨어졌나</div>
+        <div class="am"><span class="asrc">마켓인</span><span class="atm">2026.09.30 12:00</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMic0FVX3lxTE5...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">주식</div>
+    <div class="nsc">5건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE9wY24yRE9NYnZpTHdGenRWWWFUWUNkNVR3alNCUW5zc0RlM0tXSDU1TGdzcW1ocF9EUVZmWWFnUTZPb2ZhZnVnRlhZaVR6bms?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">물가 둔화에도 국채금리 부담…美 뉴욕증시, 나스닥만 0.24%↑</div>
+        <div class="am"><span class="asrc">v.daum.net</span><span class="atm">2026.10.01 06:46</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiT0FVX3lxTE9...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE9iMy1kbGRSUVk0Ny05V2otTHpMSEE2dGwwQWt5T29XWUJtMlZobExIdm9pOGU0RHFiRzJGd2NuYkJGeEtZZ0RaZklJNEdjUGlFakw5U2kxX0RwTzFH?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">02</div>
+      <div class="ac">
+        <div class="ah">뉴욕증시, 10월 금리 인상 전망 후퇴 속 혼조 마감…기술주 강세</div>
+        <div class="am"><span class="asrc">뉴스핌</span><span class="atm">2026.10.01 05:16</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiXEFVX3lxTE9...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://www.thebell.co.kr/front/newsview.asp?code=00&amp;key=202609301412260120102492" target="_blank" rel="noopener">
+      <div class="an">03</div>
+      <div class="ac">
+        <div class="ah">[글로벌 테크 줌인] 에버퓨어, 하이퍼스 케일러 공략 모멘텀 부각</div>
+        <div class="am"><span class="asrc">더벨</span><span class="atm">2026.09.30 14:34</span></div>
+        <span class="au">https://www.thebell.co.kr/front/newsview.asp?code=00...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE1lSHFFRkJaSEl1NzBwTWpRM1h6THpqeTk3MjNJRm1MUUJ5SzMwREFocGNrTVhHbmFfeG9jaDQ4dV9IU0daNWxrX3ZlUQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">04</div>
+      <div class="ac">
+        <div class="ah">[오늘의 증시] 9월 30일 코스피 코스닥</div>
+        <div class="am"><span class="asrc">뉴스1</span><span class="atm">2026.09.30 15:37</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiS0FVX3lxTE1...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE43OFh4OTZSYTB3TVQ2SUVvRS1WeEhTSENpMlgzTWpNUnVoenEzOFotbEJwS2FfV0hoVW9BNWtJOEo1S2NETklHU1BNUHRwRnppMTVJb2FkQ3M5TmhZ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">05</div>
+      <div class="ac">
+        <div class="ah">[마감시황] 코스피, 외인 2.3조 순매도에 0.48%↓…코스닥은 0.72%↑</div>
+        <div class="am"><span class="asrc">뉴스핌</span><span class="atm">2026.09.30 16:06</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiXEFVX3lxTE4...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">채권</div>
+    <div class="nsc">5건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE4zRFlfT3czVGZINWt4QW44NVd5TS1oMjBUMmhkYVFKcEg3X2lZOWMwazBkZW1HUXFFNmNVQUVjNHFHM3Z3WmxhcDNYLU1hMHQ3T3c?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">채권금리 압박에 다우 444P↓...마이크론 호실적에도 시간외 약세 [월가월부]</div>
+        <div class="am"><span class="asrc">매일경제 마켓</span><span class="atm">2026.10.01 06:55</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMiUkFVX3lxTE4...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMieEFVX3lxTFBNMW9oaGtQbkI1NnJsVm91OEQxMjVUaGh6bVY0LXZBWGRxdlFNNzZLMDlmTlphcjRET25td0tHR2FFTUZ4cjFvR0JhSEVyaFlaTDlsaTJWNUJVRE1ybkFyZ0FxSFFQUFFZNHhtSE5jTDViSFB2a2dFVtIBeEFVX3lxTFBNMW9oaGtQbkI1NnJsVm91OEQxMjVUaGh6bVY0LXZBWGRxdlFNNzZLMDlmTlphcjRET25td0tHR2FFTUZ4cjFvR0JhSEVyaFlaTDlsaTJWNUJVRE1ybkFyZ0FxSFFQUFFZNHhtSE5jTDViSFB2a2dFVg?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">02</div>
+      <div class="ac">
+        <div class="ah">금리 발작 올라탄 개미들…증시 등지고 '고금리 채권'으로</div>
+        <div class="am"><span class="asrc">뉴시스</span><span class="atm">2026.10.01 06:04</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMieEFVX3lxTFB...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://www.thebell.co.kr/front/newsview.asp?code=00&amp;key=202609301748072040103563" target="_blank" rel="noopener">
+      <div class="an">03</div>
+      <div class="ac">
+        <div class="ah">현대트랜시스, 금리 부담 뚫고 회사채 '흥행'</div>
+        <div class="am"><span class="asrc">더벨</span><span class="atm">2026.09.30 17:59</span></div>
+        <span class="au">https://www.thebell.co.kr/front/newsview.asp?code=00...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://www.thebell.co.kr/front/newsview.asp?code=00&amp;key=202609301601353360101758" target="_blank" rel="noopener">
+      <div class="an">04</div>
+      <div class="ac">
+        <div class="ah">[금리 인상기 사모대출펀드] 신용 세컨더리 시장 급성장…GP 주도 '불균형'</div>
+        <div class="am"><span class="asrc">더벨</span><span class="atm">2026.09.30 17:55</span></div>
+        <span class="au">https://www.thebell.co.kr/front/newsview.asp?code=00...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://www.thebell.co.kr/front/newsview.asp?code=00&amp;key=202609301542350040104827" target="_blank" rel="noopener">
+      <div class="an">05</div>
+      <div class="ac">
+        <div class="ah">[발행사분석] 한국금융지주, 호실적속 최대 5000억 공모채 도전</div>
+        <div class="am"><span class="asrc">더벨</span><span class="atm">2026.09.30 17:09</span></div>
+        <span class="au">https://www.thebell.co.kr/front/newsview.asp?code=00...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">부동산</div>
+    <div class="nsc">2건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9JZFpqMEZXWGg3c29JeVZoQTVJWk81YkFJLXZPMHVueTdTT1hRb0tjZkdBdmJiLXV1dWVKbk5GOTZRbm1aZEUzaHpkYmVtVVVKb1BjWFVxVVlnRHNiZ0F5MXZRUVZzZzVyWlhRVElR?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">“집값 오를까” 대신 “왜 그렇게 판단하나”…『몰상식한 부동산』 출간</div>
+        <div class="am"><span class="asrc">newskorea.ne.kr</span><span class="atm">2026.09.30 20:02</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMibkFVX3lxTE9...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMickFVX3lxTE13TkFhd1RGQTlSM2Exa1JuNGlxMUJmYnpTMHJvOTQzQVZlLWJMQnhJU1B5UHVjbDVONjkyalZWcU9jLVRyVGhEbm93Y2JrYTJKWEhFdFNxYzZoM3ZqcFdEZmJjSVd6ZzNoYVdrMktjaEVBUQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">02</div>
+      <div class="ac">
+        <div class="ah">[금융·시니어주거] 조각투자 장외거래소 ‘넥스체인지’ 출범 - 부동산 금융시장 새 유통채널 주목</div>
+        <div class="am"><span class="asrc">elderlypress.co.kr</span><span class="atm">2026.09.30 13:13</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMickFVX3lxTE1...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">글로벌 경제</div>
+    <div class="nsc">5건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://www.thebell.co.kr/front/newsview.asp?code=00&amp;key=202609301200157360105134" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">[지배구조 분석 | S&amp;K글로벌] 오너 2세 대표 선임, 신사업 승부수 시험대</div>
+        <div class="am"><span class="asrc">더벨</span><span class="atm">2026.09.30 16:08</span></div>
+        <span class="au">https://www.thebell.co.kr/front/newsview.asp?code=00...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMicEFVX3lxTE5taUhqV3V1ZEhkZmhKZTVVY25wdWdpRTNjdV9XdmpkSnFPMjNCTktLa0VYenBmSkZJRThLRFRWc1NkcVNmT2VxM0x6cVNVOFg3MjZFcl9yQ3pveVo2X240alh1QlZjdk14c2w1MllzcF8?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">02</div>
+      <div class="ac">
+        <div class="ah">'2026 경기 스타트업 서밋' 미래 '유니콘' 집결…글로벌 투자 물꼬</div>
+        <div class="am"><span class="asrc">인천일보</span><span class="atm">2026.09.30 19:37</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMicEFVX3lxTE5...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMicEFVX3lxTE83clZHc3ZKUlNmRGV6eDhDdjByazZETHJBazRJdFZWd0dPcm1QbW40bXhFQlN1aUNqdVc1blFKdHpYd2ZhRFR4SUtDVFZFZEhKdEdmclBsVUh4OG5tMGZHQUUyOVZ2ZjZuNnZWUDBLbGc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">03</div>
+      <div class="ac">
+        <div class="ah">시흥산업진흥원, 글로벌 바이오 허브 구축 전략 논의</div>
+        <div class="am"><span class="asrc">신아일보</span><span class="atm">2026.09.30 16:33</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMicEFVX3lxTE8...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMicEFVX3lxTE5jaHlVZDc4OENrdzVMaC1WRmp2Z0tnQm1KYlI2Y3VxVEtQSUtCZy1TNVVHenFTU2hSbWgtNElwdEd2cGZJTjg0NFB1OE9QS3A4eVdQRXZJWlBkLVFxb0wtSU95bi1PakQxZDRxb3JuMlM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">04</div>
+      <div class="ac">
+        <div class="ah">쏟아지는 美 경제지표, 고공행진 美 국채금리 안정시킬까</div>
+        <div class="am"><span class="asrc">오피니언뉴스</span><span class="atm">2026.09.30 13:59</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMicEFVX3lxTE5...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMid0FVX3lxTE5KczhoN2tPel9WRXhiSVJWQk9zUlRtZTBBNzNtTUVWQ0VNQmh1MEJydVc3VnNybEdNMTBZREg3U1VJZ2tSMGtPVXB1TEpBTHIwLXhuOW9TRENmb0dqUnhoZmthT3N1OGQxSkhORnlrQ2JVRnlyRGVV0gF3QVVfeXFMTkpzOGg3a096X1ZFeGJJUlZCT3NSVG1lMEE3M21NRVZDRU1CaHUwQnJ1VzdWc3JsR00xMFlESDdTVUlna1Iwa09VcHVMSkFMcjAteG45b1NEQ2ZvR2pSeGhma2FPc3U4ZDFKSE5GeWtDYlVGeXJEZVU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">05</div>
+      <div class="ac">
+        <div class="ah">네이버스 경기남부사업본부, ㈜아이글로벌 화성지역 위기아동 의료비 지원사업 기탁식</div>
+        <div class="am"><span class="asrc">한국시민기자협회 뉴스포털1</span><span class="atm">2026.09.30 13:58</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMid0FVX3lxTE5...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">하나은행</div>
+    <div class="nsc">1건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE1RLURoMlJFRWtObUtLNmswY0dVeVJOd1J1YlJiblFWcGxIbmJ2cXJFdzFJX2J3N053MzlUMFZoQllzYmpOdUFSS2ZUVGZmVFBheV92WWdqX2ZFLWVQQ1NRRC0ydHVaSlQ3RXBv?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">기보-하나은행, 충청권 AI·바이오 등 6대 산업에 200억원 금융지원</div>
+        <div class="am"><span class="asrc">lcnews.co.kr</span><span class="atm">2026.09.30 15:56</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMia0FVX3lxTE1...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+<div class="ns">
+  <div class="nsh">
+    <div class="nsk">하나금융</div>
+    <div class="nsc">5건</div>
+  </div>
+  <div class="sb">
+    <a class="art" href="https://www.thebell.co.kr/front/newsview.asp?code=00&amp;key=202609301643296520105845" target="_blank" rel="noopener">
+      <div class="an">01</div>
+      <div class="ac">
+        <div class="ah">하나금융, 숏 리스트 평가에 은행 임추위 참여 보장</div>
+        <div class="am"><span class="asrc">더벨</span><span class="atm">2026.09.30 18:41</span></div>
+        <span class="au">https://www.thebell.co.kr/front/newsview.asp?code=00...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://www.thebell.co.kr/front/newsview.asp?code=00&amp;key=202609301634224920101133" target="_blank" rel="noopener">
+      <div class="an">02</div>
+      <div class="ac">
+        <div class="ah">청라행 빠진 하나손보, 하나금융 명동 사옥으로 이동</div>
+        <div class="am"><span class="asrc">더벨</span><span class="atm">2026.09.30 16:47</span></div>
+        <span class="au">https://www.thebell.co.kr/front/newsview.asp?code=00...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://www.thebell.co.kr/front/newsview.asp?code=00&amp;key=202609292222087760101319" target="_blank" rel="noopener">
+      <div class="an">03</div>
+      <div class="ac">
+        <div class="ah">하나금융, 청라 HQ 입주 시작…소통·협업 문화 심는다</div>
+        <div class="am"><span class="asrc">더벨</span><span class="atm">2026.09.30 16:04</span></div>
+        <span class="au">https://www.thebell.co.kr/front/newsview.asp?code=00...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMibEFVX3lxTFBtSnRVQjBGYkR3Ymw4cnZBWEc1bjQ2RnB6UHlESFhPb05NeFNzUTMyVThHSXM2a0xrMUFtb0FvaFAtTzd5RTNQcnlqd3IweHBOTnpJazlURHNiSzg1czN1Rm13UV9XbU1Kby1LOA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">04</div>
+      <div class="ac">
+        <div class="ah">강성묵 “골고루 다 해야죠”…자본 키운 하나증권, 전방위 확장 채비</div>
+        <div class="am"><span class="asrc">ER 이코노믹리뷰</span><span class="atm">2026.09.30 17:45</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMibEFVX3lxTFB...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+    <a class="art" href="https://news.google.com/rss/articles/CBMib0FVX3lxTE9JOVVtbHEtRVc5U2FLYjNpRENSN0NiWHYzcWZqMTU1NHhqRVVSU2xleDFnVUpUdnRYejdUcUFGbGFqaHZuajBxSC03QTU3R3d5bmVwRTlzTUdsZlRRX3JFVnduYTZVdFU0dXFmMnZlUQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en" target="_blank" rel="noopener">
+      <div class="an">05</div>
+      <div class="ac">
+        <div class="ah">하나금융그룹, 은행·증권 등 6개 관계사 CEO 경영승계 절차 개시</div>
+        <div class="am"><span class="asrc">이코노뉴스</span><span class="atm">2026.09.30 16:45</span></div>
+        <span class="au">https://news.google.com/rss/articles/CBMib0FVX3lxTE9...</span>
+      </div>
+      <div class="aa">&#8250;</div>
+    </a>
+  </div>
+</div>
+
+<div class="tbn">
+  <div class="i">📩</div>
+  <div class="t">더벨 기사에 대한 추가 정보가 필요하신 경우 별도 요청 부탁드립니다.</div>
+</div>
+
+<div class="nft">
+  <div class="ffi">📊</div>
+  <div class="fft">
+    <div class="ffn">BRIEF<span>CAST</span> · IB시장 주요뉴스</div>
+    <div class="ffs">Google News RSS · 24시간 이내 기사 · is.gd URL 단축<br>시황: 전일 종가 / 전전일 대비 등락</div>
+  </div>
+  <div class="ffd">2026.10.01&#10;2026년 10월 01일 07:30 생성</div>
+</div>
+<div class="pad"></div>
+
+</div>
+</body>
+</html>
